@@ -10,7 +10,7 @@ class BadgeInputs extends React.Component{
                             onChange={this.props.handleChange}
                             type="text"
                             name="firstName"
-                            value={this.props.firstName}
+                            value={this.props.value.firstName}
                             placeholder="First Name"
                             required
                             />
@@ -18,7 +18,7 @@ class BadgeInputs extends React.Component{
                             onChange={this.props.handleChange}
                             type="text"
                             name="lastName"
-                            value={this.props.lastName}
+                            value={this.props.value.lastName}
                             placeholder="Last Name"
                             required
                             />
