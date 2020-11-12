@@ -21,9 +21,9 @@ class App extends React.Component {
     }
 
     handleChange(e){
-        const target = e.target;
-        const value = e.target.value;
-        const name = target.name;
+        const target = e.target
+        const value = e.target.value
+        const name = target.name
         this.setState({
             [name]: value
         })

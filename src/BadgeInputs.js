@@ -22,6 +22,7 @@ class BadgeInputs extends React.Component{
                             placeholder="Last Name"
                             required
                             />
+                            <br></br>
                         <input
                             onChange={this.props.handleChange}
                             type="email"
@@ -38,6 +39,7 @@ class BadgeInputs extends React.Component{
                             placeholder="Place of Birth"
                             required
                             />
+                            <br></br>
                         <input
                             onChange={this.props.handleChange}
                             type="number"
