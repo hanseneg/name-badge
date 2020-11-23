@@ -4,6 +4,7 @@ import './style.css'
 class BadgeDisplay extends React.Component{
     render() {
         const mappedBadges = this.props.info.nameBadges.map(badge => {
+            console.log(badge)
             return (
                 <div className="badge">
                     <h1 className="badgeTag">Badge:</h1>

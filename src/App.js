@@ -6,46 +6,22 @@ class App extends React.Component {
     constructor(){
         super();
         this.state = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            placeOfBirth: '',
-            phone: '',
-            favFood: '',
             aboutYou: 'Tell us about yourself.',
             nameBadges: [],
             count: 0
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e){
-        const target = e.target
-        const value = e.target.value
-        const name = target.name
-        this.setState({
-            [name]: value
-        })
-    }
-
-    handleSubmit(e){
+    handleSubmit = (e, formData) => {
         e.preventDefault();
-        if(this.state.firstName.length < 3 || this.state.lastName.length < 3 || this.state.phone.length < 3 || this.state.email.length < 3 || this.state.favFood.length < 3 || this.state.placeOfBirth.length < 3 || this.state.aboutYou.length < 3){
+        if(formData.firstName.length < 3 || formData.lastName.length < 3 || formData.phone.length < 3 || formData.email.length < 3 || formData.favFood.length < 3 || formData.placeOfBirth.length < 3 || formData.aboutYou.length < 3){
             alert("Your entries must have at least 3 characters.")
         } else {
-            if(this.state.phone.length !== 10 || !Number(this.state.phone)){
+            if(formData.phone.length !== 10 || !Number(formData.phone)){
                 alert("Your phone number must have at least 10 digits.")
             } else {
-                let newNameBadge = this.state
+                let newNameBadge = formData
                 this.setState(prevState => ({
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    placeOfBirth: '',
-                    phone: '',
-                    favFood: '',
-                    aboutYou: '',
                     nameBadges: [...prevState.nameBadges, newNameBadge],
                     count: prevState.count + 1
                 }))
